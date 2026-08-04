@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA01EKCgySRetFJhDtIvCicpHcwR8t66ULoN3245LCtaNRARDl+sKTORxZ2NWANnSWvZRzdhG1N97JbjPKAEzqViMRwcGGiloQ6PJ4nZGsugty9E2+Nr0mTCj220k0893/ZpH1tf3Rzrl/8CdBkQtWVKwuhliiEwnp17pNTg8ZF7N0ZPsOGMAbn5J2W3SGvswNcEZ/sYFKu6TKLS57igN8wBtGPTRPbTHNyx7m2lpULqBTIZ+vYavRy7bnFi5VC0gK8RayfGUC2F6uPQhO3XN1FJIAulu6p8b/KjfLTCm3CJ+ME8LTXQqGjDh8B+j9nePg1JdurU3rPK0EMv8w/rhORQIDAQAB",
+  "name": "Photoroom",
+  "version": "1.0.5",
+  "description": "Photoroom Developed by Robitech.",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_title": "Photoroom"
+  },
+  "permissions": [
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://photoroomai.onrender.com/*",
+    "https://app.photoroom.com/*",
+    "https://*.photoroom.com/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "reader-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.photoroom.com/*"
+      ],
+      "js": [
+        "pack-core.js",
+        "reader.js"
+      ],
+      "css": [
+        "view.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icon.png"
+      ],
+      "matches": [
+        "https://app.photoroom.com/*"
+      ]
+    }
+  ],
+  "short_name": "Photoroom"
+}

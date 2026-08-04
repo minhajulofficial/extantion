@@ -1,0 +1,8 @@
+#pxd-download-btn {
+  z-index: 2147483600 !important;
+}
+
+#pxd-download-btn[disabled] {
+  opacity: .68 !important;
+  cursor: wait !important;
+}
